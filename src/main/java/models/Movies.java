@@ -9,12 +9,22 @@ import java.util.List;
 public class Movies {
     @SerializedName("results")
     @Expose
-    private List<Result> results = null;
-    public List<Result> getResults() {
+    private List<Movie> results;
+    public List<Movie> getResults() {
         return results;
     }
-    public void setResults(List<Result> results) {
+    public void setResults(List<Movie> results) {
         this.results = results;
     }
 
+    @Override
+    public String toString() {
+        String s="";
+        for(Movie m: results ){
+            s += m.getOriginalTitle();
+            s+="\n";
+
+        }
+        return s;
+    }
 }
